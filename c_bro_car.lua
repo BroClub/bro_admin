@@ -27,13 +27,9 @@ function spawnCar(modelName)
     end)
 end
 
-RegisterCommand("car", function(source --[[ this is the player ID (on the server): a number ]], args --[[ this is a table of the arguments provided ]], rawCommand --[[ this is what the user entered ]])
-    print("car?", args[1], source, source < 0)
-    if source >= 0 then
-        if args[1] then
-            spawnCar(args[1])
-        end
-    else
-        print("This is console!")
+RegisterNetEvent("bro_admin:on_car")
+AddEventHandler("bro_admin:on_car", function(args)
+    if args[1] then
+        spawnCar(args[1])
     end
-end, true) -- this true bool means that the user cannot execute the command unless they have the 'command.commandName' ACL object allowed to one of their identifiers.
+end)

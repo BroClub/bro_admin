@@ -8,5 +8,6 @@ client_scripts {
 }
 
 server_scripts  {
+    's_bro_commands.lua',
     's_bro_identifiers.lua'
 }
