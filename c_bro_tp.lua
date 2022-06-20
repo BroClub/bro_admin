@@ -16,13 +16,11 @@ function teleport(x,y,z)
         for height = 1, 1000 do
             SetPedCoordsKeepVehicle(PlayerPedId(), x, y, height+0.0) -- at this point the collision is loaded, so set the entity coords. 
             local retval, ground_z = GetGroundZFor_3dCoord(x,y,height+0.0,false)
-            print(retval, ground_z, height)
             if retval then
-                print(retval, ground_z)
                 SetPedCoordsKeepVehicle(PlayerPedId(), x, y, ground_z) -- at this point the collision is loaded, so set the entity coords. 
                 break;
             end
-            -- Citizen.Wait(0)
+            Citizen.Wait(0)
         end
 
     end)
